@@ -1,0 +1,1 @@
+## For leetcode questions consider the solution class only.
