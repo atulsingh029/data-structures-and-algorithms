@@ -1,2 +1,4 @@
-package datastructures.stack;public class Stack {
+package datastructures.stack;
+
+public class Stack {
 }
