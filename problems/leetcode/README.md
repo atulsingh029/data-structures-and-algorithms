@@ -1,1 +1,2 @@
-## For leetcode questions consider the solution class only.
+## For leetcode questions :
+Consider the solution class only in every problem.
