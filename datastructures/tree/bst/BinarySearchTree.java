@@ -1,6 +1,6 @@
-package datastructures.tree;
+package datastructures.tree.bst;
 
-import datastructures.tree.node.BSTNode;
+import datastructures.tree.bst.bstnode.BSTNode;
 
 public class BinarySearchTree {
     private BSTNode root;
@@ -13,7 +13,8 @@ public class BinarySearchTree {
         BSTNode bstNode = new BSTNode(data);
         if (root == null) {
             root = bstNode;
-        } else {
+        }
+        else {
             BSTNode iteration = root;
             BSTNode nodeWhereInsertionIsToBeDone = null;
             while (iteration != null) {

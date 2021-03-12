@@ -9,13 +9,13 @@ public class SinglyLinkedList<T> {
             this.data = data;
         }
     }
-
     Node head;
 
     public SinglyLinkedList() {
         this.head = null;
     }
 
+    /* This method inserts a Node at the end of the singly linked list */
     public T insertAtEnd(T data){
         Node node = new Node(data);
         Node iterator=head;
@@ -31,6 +31,7 @@ public class SinglyLinkedList<T> {
         return data;
     }
 
+    /* This method inserts a Node at the start of the singly linked list */
     public T insertAtBeginning(T data){
         Node node = new Node(data);
         if(head==null){
@@ -44,6 +45,7 @@ public class SinglyLinkedList<T> {
         return data;
     }
 
+    /* This method returns True if linked list is empty else returns False */
     public boolean  isEmpty(){
         if(head == null){
             return true;
@@ -51,6 +53,7 @@ public class SinglyLinkedList<T> {
         else return false;
     }
 
+    /* This method searches through the linked list and returns first Node that matches the data of Node with provided data */
     public boolean search(T data){
         Node iterator = head;
         while (iterator.next != null){
@@ -62,6 +65,28 @@ public class SinglyLinkedList<T> {
         return false;
     }
 
+    /* This method removes the head and makes head.next the head and returns the removed head's data */
+    public int pop_from_beginning(){
+        Node poper = head;
+        head = poper.next;
+        return (Integer) poper.data;
+    }
+
+    /* This method returns the length of the linked list*/
+    public int length(){
+        int count = 0;
+        Node counter = head;
+        if (counter == null){
+            return 0;
+        }
+        while (counter.next != null){
+            counter = counter.next;
+            count = count+1;
+        }
+        return count+1;
+    }
+
+    /* This method removes the first occurrence of Node with provided data */
     public T remove(T data){
         Node iterator = head;
         T response;
@@ -85,10 +110,13 @@ public class SinglyLinkedList<T> {
         return response;
     }
 
+    /* Prints the linked list on console */
     public void view(){
         Node iterator = head;
+        if (head == null)
+            return;
         while (iterator.next != null){
-            System.out.print(iterator.data + " ");
+            System.out.print(iterator.data + " -> ");
             iterator = iterator.next;
         }
         System.out.println(iterator.data);
@@ -96,27 +124,10 @@ public class SinglyLinkedList<T> {
 
     public static void main(String[] args) {
         SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<>();
-        System.out.println("isempty"+singlyLinkedList.isEmpty());
-        singlyLinkedList.insertAtEnd(50);
+        System.out.println("isempty "+singlyLinkedList.isEmpty());
+        singlyLinkedList.insertAtEnd(5);
         singlyLinkedList.insertAtEnd(20);
         singlyLinkedList.insertAtEnd(-50);
-        System.out.println("5 "+singlyLinkedList.search(5));
-        System.out.println("20 "+singlyLinkedList.search(20));
-        singlyLinkedList.insertAtEnd(1110);
         singlyLinkedList.view();
-        singlyLinkedList.insertAtBeginning(2);
-        System.out.println("2 "+singlyLinkedList.search(2));
-        singlyLinkedList.insertAtBeginning(3);
-        System.out.println("5000 "+singlyLinkedList.search(5000));
-        singlyLinkedList.view();
-        System.out.println("isempty"+singlyLinkedList.isEmpty());
-        System.out.println("removing 50 " + singlyLinkedList.remove(50));
-        singlyLinkedList.view();
-        System.out.println("removing 3 "+ singlyLinkedList.remove(3));
-        singlyLinkedList.view();
-        System.out.println("removing 1110 "+singlyLinkedList.remove(1110));
-        singlyLinkedList.view();
-        System.out.println(singlyLinkedList.remove(56));
-        System.out.println(singlyLinkedList.remove(966));
     }
 }

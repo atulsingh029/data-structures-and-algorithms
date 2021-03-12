@@ -1,4 +1,4 @@
-package datastructures.tree.node;
+package datastructures.tree.bst.bstnode;
 public class BSTNode {
     private int data;
     private BSTNode left;
@@ -12,6 +12,10 @@ public class BSTNode {
         return data;
     }
 
+    public void setData(int data) {
+        this.data = data;
+    }
+
     public BSTNode getLeft() {
         return left;
     }
@@ -20,7 +24,9 @@ public class BSTNode {
         this.left = left;
     }
 
-    public BSTNode getRight() { return right; }
+    public BSTNode getRight() {
+        return right;
+    }
 
     public void setRight(BSTNode right) {
         this.right = right;
